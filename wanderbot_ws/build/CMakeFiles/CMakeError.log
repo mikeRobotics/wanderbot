@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/lazarus/Desktop/Ros_tuts/wanderbot/wanderbot_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_038fa/fast"
+/usr/bin/make -f CMakeFiles/cmTC_038fa.dir/build.make CMakeFiles/cmTC_038fa.dir/build
+make[1]: Entering directory '/home/lazarus/Desktop/Ros_tuts/wanderbot/wanderbot_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_038fa.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_038fa.dir/CheckSymbolExists.c.o   -c /home/lazarus/Desktop/Ros_tuts/wanderbot/wanderbot_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_038fa
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_038fa.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_038fa.dir/CheckSymbolExists.c.o  -o cmTC_038fa 
+CMakeFiles/cmTC_038fa.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_038fa.dir/build.make:97: recipe for target 'cmTC_038fa' failed
+make[1]: *** [cmTC_038fa] Error 1
+make[1]: Leaving directory '/home/lazarus/Desktop/Ros_tuts/wanderbot/wanderbot_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_038fa/fast' failed
+make: *** [cmTC_038fa/fast] Error 2
+
+File /home/lazarus/Desktop/Ros_tuts/wanderbot/wanderbot_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/lazarus/Desktop/Ros_tuts/wanderbot/wanderbot_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_940d9/fast"
+/usr/bin/make -f CMakeFiles/cmTC_940d9.dir/build.make CMakeFiles/cmTC_940d9.dir/build
+make[1]: Entering directory '/home/lazarus/Desktop/Ros_tuts/wanderbot/wanderbot_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_940d9.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_940d9.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_940d9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_940d9.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_940d9.dir/CheckFunctionExists.c.o  -o cmTC_940d9 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_940d9.dir/build.make:97: recipe for target 'cmTC_940d9' failed
+make[1]: *** [cmTC_940d9] Error 1
+make[1]: Leaving directory '/home/lazarus/Desktop/Ros_tuts/wanderbot/wanderbot_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_940d9/fast' failed
+make: *** [cmTC_940d9/fast] Error 2
+
+
