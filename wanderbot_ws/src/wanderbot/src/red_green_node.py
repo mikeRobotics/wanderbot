@@ -4,13 +4,15 @@ import rospy
 from geometry_msgs.msg import Twist
 
 cmd_vel_pub = rospy.Publisher('cmd_vel',Twist,queue_size=1)
-rospy.init_node("red_light_green_light")
+rospy.init_node("red_green_node", anonymous=False)
+rospy.loginfo("Press CTRL + C to terminate")
 
 red_light_twist = Twist()
 green_light_twist = Twist()
 green_light_twist.linear.x = 0.5
 
-driving_forward = False
+
+driving_forward = True
 light_change_time = rospy.Time.now()
 rate = rospy.Rate(10)
 
